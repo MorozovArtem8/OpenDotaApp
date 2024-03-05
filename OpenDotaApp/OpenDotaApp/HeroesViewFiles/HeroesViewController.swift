@@ -27,11 +27,51 @@ class HeroesViewController: UIViewController {
         self.navigationController?.pushViewController(infoHeroesViewController, animated: true)
     }
     
+    private var tableView = UITableView()
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    private var heroesV = Heroes()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
-        setupButton()
+        setupTableView()
+        ApiManager.shared.getHeroes(completion: { [weak self] heroes in
+            DispatchQueue.main.async {
+                guard let self else {return}
+                self.heroesV = heroes
+                self.tableView.reloadData()
+            }
+            
+        })
+        //setupButton()
         
     }
+ 
+    
+}
 
+extension HeroesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        heroesV.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let textVale = heroesV[indexPath.row].localizedName
+        cell.textLabel?.text = "\(textVale)"
+        return cell
+        
+    }
+    
+    
 }

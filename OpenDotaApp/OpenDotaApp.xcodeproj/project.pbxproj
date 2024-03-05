@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC3167652B97AF9200E27EE1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3167642B97AF9200E27EE1 /* ApiManager.swift */; };
+		AC3167682B97B26700E27EE1 /* HeroesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3167672B97B26700E27EE1 /* HeroesData.swift */; };
 		AC5DBCE92B978ADB00C42C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5DBCE82B978ADB00C42C7B /* AppDelegate.swift */; };
 		AC5DBCEB2B978ADB00C42C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5DBCEA2B978ADB00C42C7B /* SceneDelegate.swift */; };
 		AC5DBCED2B978ADB00C42C7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5DBCEC2B978ADB00C42C7B /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC3167642B97AF9200E27EE1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		AC3167672B97B26700E27EE1 /* HeroesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesData.swift; sourceTree = "<group>"; };
 		AC5DBCE52B978ADB00C42C7B /* OpenDotaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDotaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5DBCE82B978ADB00C42C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC5DBCEA2B978ADB00C42C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC3167662B97AF9D00E27EE1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC3167672B97B26700E27EE1 /* HeroesData.swift */,
+				AC3167642B97AF9200E27EE1 /* ApiManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AC5DBCDC2B978ADB00C42C7B = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +75,7 @@
 		AC5DBCE72B978ADB00C42C7B /* OpenDotaApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC3167662B97AF9D00E27EE1 /* Network */,
 				AC5DBD042B97994600C42C7B /* Helpers */,
 				AC5DBCFC2B978DBC00C42C7B /* TabBarController.swift */,
 				ACBE2AA62B97999500C6C346 /* ItemsViewFiles */,
@@ -170,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3167652B97AF9200E27EE1 /* ApiManager.swift in Sources */,
 				ACBE2AA92B979A5900C6C346 /* InfoHeroesViewController.swift in Sources */,
 				AC5DBCED2B978ADB00C42C7B /* ViewController.swift in Sources */,
 				AC5DBD032B9790FF00C42C7B /* ItemsViewController.swift in Sources */,
@@ -177,6 +192,7 @@
 				AC5DBCE92B978ADB00C42C7B /* AppDelegate.swift in Sources */,
 				AC5DBCEB2B978ADB00C42C7B /* SceneDelegate.swift in Sources */,
 				AC5DBD012B9790E700C42C7B /* HeroesViewController.swift in Sources */,
+				AC3167682B97B26700E27EE1 /* HeroesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
